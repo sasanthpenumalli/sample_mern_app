@@ -1,1 +1,19 @@
 sample mern app
+{
+    "name":"sunny",
+    "email":"sasanthpenumalli1484@gmail.com",
+    "password":"4444",
+    "position":"HR"
+}           
+{
+    "name":"ram",
+    "email":"ram5566@gmail.com",
+    "password":"1234",
+    "position":"EMPLOYEE"
+}
+{
+    "name":"sita",
+    "email":"sit9090@gmail.com",
+    "password":"1122",
+    "position":"EMPLOYEE"
+}  
