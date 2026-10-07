@@ -1,0 +1,35 @@
+def staff_details(staff):
+    return{
+        "name":staff["name"],
+        "email":staff["email"],
+        "designation":staff["designation"]
+    }    
+
+@app.get("/getstaff")
+def getstaff():
+    staff=staff_collection.find()
+    return [staff_details(staff) for staff in staff]
+
+@app.post("/registerstudents")
+def registerstudents(stu:Student):
+    result=students_collection.insert_one(stu.model_dump())
+    return {"Message":"Inserted successfully"}
+
+@app.post("/registerstaff")
+def registerstaff(staff:staff):
+    result=staff_collection.insert_one(staff.model_dump())
+    return {"Message":"Inserted successfully"}
+ 
+
+@app.put("/updateprofile")
+def updateprofile():
+    return "Update profile called"
+@app.delete("/deleteprofile")
+def deleteprofile():
+    return "Deleted API called"
+@app.get("/getstudentDet/{userid}")
+def getstudentDet(userid:int):
+    return{"user_id":userid}
+@app.get("/getstudentsdetails")
+def getstudentsdetails(page:int=1,limit:int=10):
+    return{"page":page,"limit":limit}
