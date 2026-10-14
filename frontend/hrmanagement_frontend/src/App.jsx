@@ -1,20 +1,24 @@
 import { useState } from 'react'
 import './App.css'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import Header from './components/header'
+import Footer from './components/footer'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './pages/home'
+import About from './pages/about'
+import Contact from './pages/contact'
+import {Routes,Route} from 'react-router-dom'
 function App() {
-
   return (
     <div>
-      <Header/>
-    <h1>My first website </h1>
-    <h2>created by sunny</h2>
-    <Footer/>
+    <Header />
+    <Routes>
+    <Route path='/' element={<Home></Home>}></Route>
+    <Route path='/about' element={<About></About>}></Route>
+    <Route path='/contact' element={<Contact></Contact>}></Route>
+    </Routes>
+    <Footer />
     </div>
-
   )
 }
-
-
 export default App
+
