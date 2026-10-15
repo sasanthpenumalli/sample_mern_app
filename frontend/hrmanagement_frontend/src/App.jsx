@@ -6,15 +6,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/home'
 import About from './pages/about'
 import Contact from './pages/contact'
+import Adminlogin from './pages/adminlogin' 
+import Adminhome from './pages/adminhome'
 import {Routes,Route} from 'react-router-dom'
 function App() {
   return (
     <div>
     <Header />
     <Routes>
-    <Route path='/' element={<Home></Home>}></Route>
+    <Route path='/' element={<Home></Home>}></Route> 
     <Route path='/about' element={<About></About>}></Route>
     <Route path='/contact' element={<Contact></Contact>}></Route>
+    <Route path='/adminlogin' element={<Adminlogin></Adminlogin>}></Route>
+    <Route path='/adminhome' element={<Adminhome></Adminhome>}></Route>
     </Routes>
     <Footer />
     </div>
