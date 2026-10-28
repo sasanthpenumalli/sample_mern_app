@@ -6,9 +6,9 @@ function Header() {
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
             <Link to="/contact">Contact</Link>
-            <Link to="/services">Services</Link>
-            <Link to="/adminlogin">Admin Login</Link>   
-
+            <Link to="/services">Services</Link>  
+            <Link to="/register">Register</Link>
+            <Link to="/Login">Login</Link>
         </div>
     )
 }
