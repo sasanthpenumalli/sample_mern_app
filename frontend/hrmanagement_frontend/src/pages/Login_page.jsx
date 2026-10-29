@@ -1,9 +1,9 @@
-import useState from 'react'
+import {useState} from 'react'
 
 import { useNavigate } from 'react-router-dom'
 
 
-function Login() 
+function Login_page() 
 {
     let [email, setEmail] = useState("")
     let [password, setPassword] = useState("")
@@ -12,6 +12,8 @@ function Login()
         event.preventDefault()
         if(email=="admin@gmail.com" && password=="admin123") {
             // Handle successful login
+            localStorage.setItem("currentuser", 
+                JSON.stringify({"name": "admin", "role": "admin"}));
             navigate('/adminhome')
         } else {
             let req=await fetch("http://localhost:3000/api/emp/login", 
@@ -22,6 +24,13 @@ function Login()
             });
             let data=await req.json()
             console.log(data)
+            if(data.user.role=="HR") {
+                localStorage.setItem("currentuser", JSON.stringify(data.user));
+                navigate('/Hrhome')
+            }else{
+                localStorage.setItem("currentuser", JSON.stringify(data.user));
+                navigate('/EmpHome')
+            }
             // Handle failed login
         }
     }
@@ -40,4 +49,4 @@ function Login()
         </div>
     )
 }
-export default Login
+export default Login_page

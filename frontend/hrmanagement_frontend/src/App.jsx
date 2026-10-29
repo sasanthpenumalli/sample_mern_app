@@ -10,7 +10,7 @@ import Adminlogin from './pages/adminlogin'
 import Adminhome from './pages/adminhome'
 import {Routes,Route} from 'react-router-dom'
 import Register from './pages/register' 
-import login_page from './pages/login_page'  
+import Login_page from './pages/Login_page'  
 function App() {
   return (
     <div>
@@ -22,7 +22,7 @@ function App() {
     <Route path='/adminlogin' element={<Adminlogin></Adminlogin>}></Route>
     <Route path='/adminhome' element={<Adminhome></Adminhome>}></Route>
     <Route path='/register' element={<Register></Register>}></Route>
-    <Route path='/Login' element={<Login></Login>}></Route>   
+    <Route path='/login' element={<Login_page> </Login_page>}></Route>   
     </Routes>
     <Footer />
     </div>
